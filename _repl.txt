@@ -1,0 +1,13 @@
+export const COBERTURAS_ADICIONAIS = [
+  { id: 'terceiros_50', label: 'Danos à terceiros (até R$ 50.000,00)', preco: 17.50 },
+  { id: 'terceiros_100', label: 'Danos à terceiros (até R$ 100.000,00)', preco: 35.00 },
+  { id: 'assist_400', label: 'Assistência 24h (até 400km)', preco: 22.00 },
+  { id: 'assist_600', label: 'Assistência 24h (até 600km)', preco: 40.00 },
+  { id: 'assist_1000', label: 'Assistência 24h (até 1000km)', preco: 60.00 },
+  { id: 'parabrisa', label: 'Proteção parabrisa', preco: 20.00 },
+  { id: 'vidros_lanternas', label: 'Proteção vidros e lanternas', preco: 50.00 },
+  { id: 'apolice_10', label: 'Apolice para passageiro (R$ 10.000,00)', preco: 8.00 },
+  { id: 'apolice_30', label: 'Apolice para passageiro (R$ 30.000,00)', preco: 13.00 },
+  { id: 'reserva_7', label: 'Carro Reserva (7 dias)', preco: 21.00 },
+  { id: 'reserva_15', label: 'Carro Reserva (15 dias)', preco: 44.00 },
+];

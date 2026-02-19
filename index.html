@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full" style="font-size: 14px;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>UnimaxCRM Pro v2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              unimax: {
+                blue: '#0E3A6D',
+                dark: '#0B2E57',
+                cyan: '#00B4E6',
+                emerald: '#10b981',
+                slate: '#F4F7FB'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+      
+      :root {
+        --unimax-blue: #0E3A6D;
+        --unimax-dark: #0B2E57;
+        --unimax-cyan: #00B4E6;
+        --unimax-emerald: #10b981;
+        --unimax-bg: #F4F7FB;
+        --unimax-text: #1E2A38;
+        --unimax-text-2: #6B7280;
+        --unimax-border: #E6EBF2;
+      }
+
+      * {
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--unimax-bg);
+        color: var(--unimax-text);
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; 
+        height: 100vh;
+        height: 100dvh;
+        width: 100vw;
+        -webkit-font-smoothing: antialiased;
+        touch-action: manipulation;
+        overscroll-behavior: none;
+      }
+
+      #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 20px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+      .shimmer-effect {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-effect::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: shimmer 2s infinite;
+      }
+
+      .premium-glow:hover {
+        box-shadow: 0 30px 60px -12px rgba(0, 42, 94, 0.25);
+      }
+
+      /* Corporate hover states (fintech style) */
+      .ui-btn-primary { transition: all 200ms ease; }
+      .ui-btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(14, 58, 109, 0.22); }
+
+      .ui-btn-secondary { transition: all 200ms ease; }
+      .ui-btn-secondary:hover { background: rgba(14, 58, 109, 0.06); border-color: rgba(14, 58, 109, 0.25); }
+
+      .ui-card { transition: all 200ms ease; }
+      .ui-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.08); }
+
+      .ui-sidebar-item { transition: all 200ms ease; }
+      .ui-sidebar-item:hover { background: rgba(255,255,255,0.08); }
+
+      .ui-input { transition: all 200ms ease; }
+      .ui-input:hover { border-color: rgba(14, 58, 109, 0.35); }
+
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fab-glow {
+        0% { box-shadow: 0 0 0 0 rgba(0, 69, 149, 0.4); }
+        70% { box-shadow: 0 0 0 20px rgba(0, 69, 149, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 69, 149, 0); }
+      }
+      .fab-pro-pulse {
+        animation: fab-glow 3s infinite;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    
+      .orbis-progress {
+        animation: orbisBar 1.25s ease-in-out infinite;
+      }
+      @keyframes orbisBar {
+        0% { transform: translateX(-110%); }
+        100% { transform: translateX(260%); }
+      }
+
+      /* Preloader transitions */
+      .preloader-shell {
+        position: relative;
+        overflow: hidden;
+      }
+      .preloader-enter {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .preloader-exit {
+        opacity: 0;
+        transform: translateY(-6px) scale(1.02);
+        filter: blur(2px);
+        transition: opacity 380ms ease, transform 380ms ease, filter 380ms ease;
+      }
+
+      /* App entrance animation (preloader -> dashboard/login) */
+      .app-enter {
+        animation: appFadeIn 420ms ease-out both;
+      }
+      @keyframes appFadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="h-full w-full">
+    <div id="root" class="h-full w-full"></div>
+
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
