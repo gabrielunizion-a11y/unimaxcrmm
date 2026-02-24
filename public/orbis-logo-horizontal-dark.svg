@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220" fill="none">
+  <g transform="translate(20,18)">
+    <circle cx="92" cy="92" r="62" stroke="#FFFFFF" stroke-width="14" opacity="0.9"/>
+    <ellipse cx="92" cy="92" rx="76" ry="42" stroke="#FFFFFF" stroke-width="11" opacity="0.55" transform="rotate(-22 92 92)"/>
+    <circle cx="142" cy="66" r="10" fill="#FFFFFF"/>
+  </g>
+  <text x="200" y="110" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#FFFFFF">UnimaxCRM</text>
+  <text x="202" y="160" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" opacity="0.75">v2.0</text>
+</svg>
