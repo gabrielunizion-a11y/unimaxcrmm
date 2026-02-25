@@ -2,9 +2,17 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 
-// Carrega variáveis locais (frontend usa .env.local; reutilizamos aqui)
-dotenv.config({ path: '.env.local' });
-dotenv.config();
+// Carrega variáveis de ambiente do diretório do servidor (à prova de proxy/cwd)
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Prioriza .env.local (dev) e depois .env
+dotenv.config({ path: path.join(__dirname, '.env.local') });
+dotenv.config({ path: path.join(__dirname, '.env') });
+
 
 const app = express();
 app.use(cors());
