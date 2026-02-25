@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://unimaxcrmm.onrender.com/api/$1"
+    }
+  ]
+}
